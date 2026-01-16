@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Titanic Survival</title>
+    <style>
+        body { font-family: sans-serif; padding: 20px; background: #e0f7fa; }
+        .box { background: white; padding: 20px; max-width: 400px; margin: auto; border-radius: 8px; }
+        input, select, button { width: 100%; margin: 5px 0; padding: 10px; }
+        button { background: #006064; color: white; border: none; cursor: pointer; }
+    </style>
+</head>
+<body>
+    <div class="box">
+        <h2>🚢 Titanic Survival Check</h2>
+        <form method="POST">
+            <label>Passenger Class (1=Rich, 3=Poor)</label>
+            <select name="Pclass">
+                <option value="1">1st Class</option>
+                <option value="2">2nd Class</option>
+                <option value="3">3rd Class</option>
+            </select>
+
+            <label>Sex</label>
+            <select name="Sex">
+                <option value="0">Male</option>
+                <option value="1">Female</option>
+            </select>
+
+            <label>Age</label>
+            <input type="number" name="Age" placeholder="Age" required>
+
+            <label>Siblings/Spouses Aboard</label>
+            <input type="number" name="SibSp" value="0">
+
+            <label>Parents/Children Aboard</label>
+            <input type="number" name="Parch" value="0">
+
+            <label>Fare Price ($)</label>
+            <input type="number" name="Fare" placeholder="Price" required>
+
+            <button type="submit">Predict</button>
+        </form>
+        <h3>{{ prediction_text }}</h3>
+    </div>
+</body>
+</html>
